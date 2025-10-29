@@ -1,0 +1,10 @@
+.direnv
+.envrc
+__pycache__/
+*.pyc
+.venv/
+venv/
+.vscode/
+.idea/
+.pytest_cache/
+.coverage
