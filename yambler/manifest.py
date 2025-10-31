@@ -26,12 +26,12 @@ class Manifest:
             self.data: dict[str, dict[str, str | list[str]]] = load(f)
 
         self.items: dict[str, Item] = {
-            k: Item(k, value=v["value"], groups=v["groups"])
+            k: Item(k, value=v["value"], groups=v["groups"]) # type: ignore
             for k, v in self.data["item"].items()
         }
 
         self.groups: dict[str, Group] = {
-            k: Group(k, groups=v.get("groups")) for k, v in self.data["group"].items()
+            k: Group(k, groups=v.get("groups")) for k, v in self.data["group"].items() # type: ignore
         }
 
         # VALIDATE EXISTENCE

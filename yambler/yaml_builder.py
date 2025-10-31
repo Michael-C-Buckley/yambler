@@ -12,8 +12,8 @@ class YAMLBuilder:
         self.manifest: Manifest = manifest
 
     def build_yaml(self) -> str:
-        group_to_values = {}
+        group_to_values: dict[str, list[str]] = {}
         for group, names in self.manifest.items_in_groups.items():
             group_to_values[group] = [self.manifest.items[name].value for name in names]
-        return yaml.dump({"groups": group_to_values}, sort_keys=True)
+        return yaml.dump({"groups": group_to_values}, sort_keys=True) # type: ignore
 
