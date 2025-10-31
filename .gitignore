@@ -8,3 +8,7 @@ venv/
 .idea/
 .pytest_cache/
 .coverage
+*.egg-info
+
+# Testing files
+scrap.*
